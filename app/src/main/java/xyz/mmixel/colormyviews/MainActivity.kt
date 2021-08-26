@@ -21,11 +21,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListeners() {
 
-        val clickableViews: List<View> = listOf(
-            binding.boxOneText, binding.boxTwoText, binding.boxThreeText,
-            binding.boxFourText, binding.boxFiveText, binding.constraintLayout,
-            binding.redButton, binding.yellowButton, binding.greenButton
-        )
+        val clickableViews: List<View> =
+            with(binding) {
+                listOf(
+                    boxOneText, boxTwoText, boxThreeText,
+                    boxFourText, boxFiveText, constraintLayout,
+                    redButton, yellowButton, greenButton
+                )
+            }
+
 
         for (item in clickableViews) {
             item.setOnClickListener { makeColor(it) }
